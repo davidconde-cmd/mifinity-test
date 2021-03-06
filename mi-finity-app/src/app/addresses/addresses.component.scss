@@ -1,0 +1,42 @@
+
+.addressGroup{
+
+  margin-bottom: 15px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  overflow: hidden;
+
+  .addressFieldsGroup {
+    padding: 15px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .address-label {
+
+    width: 100%;
+    background: #eaeaea;
+
+    .address-label-name {
+      float: left;
+      width: calc(100% - 40px);
+      padding: 8px 15px;
+      margin: 0;
+      font-weight: bolder;
+      line-height: 24px;
+    }
+    .address-label-remove {
+      float: left;
+    }
+
+  }
+
+}
+
+.addresses-form-actions {
+  button {
+    width: 100%;
+  }
+}

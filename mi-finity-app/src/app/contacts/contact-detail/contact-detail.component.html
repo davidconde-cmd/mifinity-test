@@ -1,0 +1,18 @@
+<div class="container container-contact-detail">
+  <div class="container">
+    <div class="contact-details">
+      <div class="clearfix">
+        <div class="contact-avatar">
+          <img
+            src="{{contact.avatar}}"
+            default="{{defaultContactImage}}"
+            class="img">
+        </div>
+        <p class="contact-name"><span>{{contact.first_name}}</span><span>{{contact.last_name}}</span></p>
+      </div>
+    </div>
+    <div class="contact-addresses">
+      <app-addresses></app-addresses>
+    </div>
+  </div>
+</div>

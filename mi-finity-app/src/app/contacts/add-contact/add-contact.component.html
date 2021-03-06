@@ -1,0 +1,37 @@
+
+<form class="add-contact-form" [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-sm-10 col-10">
+      <mat-form-field>
+        <mat-label>New Contact</mat-label>
+        <input
+          matInput
+          ngModel
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ex. Johh"
+          [formControlName]="'name'"
+        >
+        <mat-error *ngIf="!addContactForm.get('name').valid && addContactForm.get('name').touched ">
+          <div *ngIf="addContactForm.get('name').errors.required">This field is required</div>
+          <div *ngIf="addContactForm.get('name').errors.pattern">You must insert your first and last names</div>
+        </mat-error>
+
+      </mat-form-field>
+    </div>
+
+    <div class="col-sm-2 col-2">
+      <button
+        mat-mini-fab color="primary"
+        aria-label="Submit Add Contact Form"
+        id="submit-add-form"
+        type="submmit"
+        [disabled]="!addContactForm.valid">
+        <mat-icon role="img" aria-hidden="false" data-mat-icon-type="font" class="mat-icon notranslate material-icons mat-icon-no-color">add</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</form>

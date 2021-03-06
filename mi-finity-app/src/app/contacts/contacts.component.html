@@ -1,0 +1,19 @@
+<div class="container contacts-container">
+
+  <h1>Contacts List</h1>
+  <p>You have {{contacts?.length}} contacts</p>
+
+  <div class="contacts-list">
+    <mat-list>
+      <ng-container *ngFor="let contact of contacts; let last = last">
+        <mat-option>
+          <app-contact-card [contact]="contact"></app-contact-card>
+        </mat-option>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </ng-container>
+    </mat-list>
+  </div>
+
+  <app-add-contact></app-add-contact>
+
+</div>

@@ -1,0 +1,35 @@
+.container-contact-detail {
+  margin-top: 15px;
+}
+
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  float: left;
+  border-radius: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  img{
+    height:50px;
+    display: table;
+  }
+}
+
+.contact-name {
+  margin: 0;
+  float: left;
+  line-height: 25px;
+
+  span {
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    color: #3a51bb;
+}
+}

@@ -1,0 +1,13 @@
+<a [routerLink]="['/contacts/contact-detail', contact.id]" (click)="onContactClick()">
+  <div class="clearfix">
+    <div class="contact-avatar">
+      <img
+        src="{{contact.avatar}}"
+        default="{{defaultContactImage}}"
+        class="img">
+    </div>
+    <p class="contact-name">{{contact.first_name}} {{contact.last_name}}</p>
+  </div>
+</a>
+
+

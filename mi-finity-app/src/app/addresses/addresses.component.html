@@ -1,0 +1,109 @@
+<div class="addresses-form-container">
+
+  <form [formGroup]="addressesForm">
+
+    <ng-container *ngFor="let userFormGroup of formAddresses.controls; let i = index">
+      <div class="addressGroup" [formGroup]="userFormGroup">
+
+        <label class="address-label">
+          <div class="clearfix">
+            <p class="address-label-name">Address #{{i+1}}</p>
+            <button type="button" class="address-label-remove" mat-icon-button aria-label="Remove address" (click)="removeFormControl(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </label>
+
+        <div class="addressFieldsGroup">
+          <mat-form-field>
+            <mat-label>Street 1</mat-label>
+            <input
+              matInput
+
+              type="text"
+              id="street1"
+              name="street1"
+              placeholder="Street example 1"
+              [formControlName]="'street1'"
+            >
+
+            <!--mat-error *ngIf="!addContactForm.get('name').valid && addContactForm.get('name').touched ">
+              <div *ngIf="addContactForm.get('name').errors.required">This field is required</div>
+              <div *ngIf="addContactForm.get('name').errors.pattern">You must insert your first and last names</div>
+            </mat-error-->
+
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Street 2</mat-label>
+            <input
+              matInput
+
+              type="text"
+              id="street2"
+              name="street2"
+              placeholder="Street example 2"
+              [formControlName]="'street2'"
+            >
+
+            <!-- <mat-error *ngIf="!addContactForm.get('name').valid && addContactForm.get('name').touched ">
+              <div *ngIf="addContactForm.get('name').errors.required">This field is required</div>
+              <div *ngIf="addContactForm.get('name').errors.pattern">You must insert your first and last names</div>
+            </mat-error> -->
+
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Town</mat-label>
+            <input
+              matInput
+
+              type="text"
+              id="town"
+              name="town"
+              placeholder="Town example"
+              [formControlName]="'town'"
+            >
+
+            <!-- <mat-error *ngIf="!addContactForm.get('name').valid && addContactForm.get('name').touched ">
+              <div *ngIf="addContactForm.get('name').errors.required">This field is required</div>
+              <div *ngIf="addContactForm.get('name').errors.pattern">You must insert your first and last names</div>
+            </mat-error> -->
+
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Country</mat-label>
+
+            <select matNativeControl id="country" name="country" [formControlName]="'country'">
+              <option *ngFor="let country of countries; let i = index" [value]="countries[i].iso2">{{countries[i].name}}</option>
+            </select>
+
+            <!-- <mat-error *ngIf="!addContactForm.get('name').valid && addContactForm.get('name').touched ">
+              <div *ngIf="addContactForm.get('name').errors.required">This field is required</div>
+              <div *ngIf="addContactForm.get('name').errors.pattern">You must insert your first and last names</div>
+            </mat-error> -->
+
+          </mat-form-field>
+        </div>
+      </div>
+    </ng-container>
+
+  </form>
+
+  <div class="addresses-form-actions">
+    <div class="row">
+      <div class="col-sm-4 col-6">
+        <button mat-stroked-button (click)="addFormControl()">Add address</button>
+      </div>
+      <div class="col-sm-4 col-6">
+        <button  mat-button color="primary" (click)="submitForm()" [disabled]="addressesForm.invalid || !addressesForm.touched">Save</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

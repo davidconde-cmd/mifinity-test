@@ -1,0 +1,20 @@
+.contact-avatar {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  float: left;
+  border-radius: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  img{
+    height:25px;
+    display: table;
+  }
+}
+
+.contact-name {
+  margin: 0;
+  float: left;
+  line-height: 25px;
+}
